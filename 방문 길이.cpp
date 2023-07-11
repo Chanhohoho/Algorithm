@@ -1,44 +1,49 @@
 #include <string>
-#include <vector>
-#include <iostream>
+#include <unordered_map>
 using namespace std;
-
-struct node{
-    int r,c;
-};
 
 int solution(string dirs) {
     int answer = 0;
+    
     int len = dirs.size();
     
-    vector<node> map[11][11];
-    
-    int nowr=0, nowc=0;
+    int nowx=0, nowy=0;
+    unordered_map<string, int> line;
     
     for(int i=0; i<len; i++){
-    
-        int nextr, nextc;
+        
+        int nextx, nexty;
+        
         if(dirs[i]=='U'){
-            nextr=nowr+1;
-            nextc=nowc;
+            nextx=nowx;
+            nexty=nowy+1;
         }
-        else if(dirs[i]=='D'){
-            nextr=nowr-1;
-            nextc=nowc;
+        if(dirs[i]=='D'){
+            nextx=nowx;
+            nexty=nowy-1;
         }
-        else if(dirs[i]=='R'){
-            nextr=nowr;
-            nextc=nowc+1;
+        if(dirs[i]=='L'){
+            nextx=nowx-1;
+            nexty=nowy;
         }
-        else{
-            nextr=nowr;
-            nextc=nowc-1;
+        if(dirs[i]=='R'){
+            nextx=nowx+1;
+            nexty=nowy;
         }
         
-        int l = map[nowr][nowc].size();
+        if(nextx<-5 || nextx>5 || nexty>5 || nexty<-5) continue;
         
-        nowr=nextr;
-        nowc=nextc;
+        string s1 = to_string(nowx) + to_string(nowy) + to_string(nextx) + to_string(nexty);
+        string s2 = to_string(nextx) + to_string(nexty) + to_string(nowx) + to_string(nowy);
+        
+        if(line[s1]==0 && line[s2]==0){//지나간적 있는지
+            line[s1]=1;
+            line[s2]=1;
+            answer++;
+        }
+        
+        nowx=nextx;
+        nowy=nexty;
     }
     
     return answer;
