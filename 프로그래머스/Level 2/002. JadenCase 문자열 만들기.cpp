@@ -13,11 +13,11 @@ string solution(string s) {
         if(s[i]==' ') {
             check=true;
         }
-        else if(check){
+        else if(check){ // toupper(s[i])
             if(s[i]>='a' && s[i]<='z') s[i]+='A'-'a';
             check=false;
         }
-        else{
+        else{           // tolower(s[i])
             if(s[i]>='A' && s[i]<='Z') s[i]+='a'-'A';
         }
         
