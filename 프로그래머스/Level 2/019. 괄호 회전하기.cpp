@@ -4,7 +4,7 @@
 using namespace std;
 
 int solution(string s) {
-    int answer = -1;
+    int answer = 0;
     s=s+s;
     
     for(int i=0; i<s.size()/2; i++){
@@ -21,5 +21,5 @@ int solution(string s) {
         if(st.empty())   answer++;
     }
     
-    return answer+1;
+    return answer;
 }
