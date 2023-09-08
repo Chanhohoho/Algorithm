@@ -10,7 +10,7 @@ int solution(vector<int> arr) {
     int last = arr[0];
     int big, small;
  
-    for(int i=1; i<arr.size(); i++){
+    for(int i=1; i<arr.size(); i++){    //  2개씩 비교하여 최소공배수를 찾아냄
     
         if(last<arr[i]) {
             big=arr[i];
