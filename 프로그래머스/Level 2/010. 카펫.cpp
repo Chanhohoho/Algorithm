@@ -14,8 +14,8 @@ vector<int> solution(int brown, int yellow) {
         int brownNeed = (i+j)*2+4;
         
         if(brown == brownNeed){
-            answer.push_back(j+2);
-            answer.push_back(i+2);
+            answer.push_back(j+2); // 가로 길이
+            answer.push_back(i+2); // 세로 길이
             break;
         }
         
