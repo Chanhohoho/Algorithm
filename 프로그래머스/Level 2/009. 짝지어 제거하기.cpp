@@ -3,8 +3,7 @@
 #include <stack>
 using namespace std;
 
-int solution(string s)
-{
+int solution(string s){
     int answer = 0;
     
     stack<char> st;
