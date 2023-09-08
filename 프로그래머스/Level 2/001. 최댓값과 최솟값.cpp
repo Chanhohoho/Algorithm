@@ -7,7 +7,6 @@ string solution(string s) {
     
     int i = 0;
     string temp = "";
-    
     int maxN = -123456789;
     int minN = 123456789;
     
