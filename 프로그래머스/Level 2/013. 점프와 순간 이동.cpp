@@ -1,7 +1,8 @@
+#include <string>
+#include <vector>
 using namespace std;
 
-int solution(int n)
-{
+int solution(int n){
     int ans = 0;
     
     if(n==1) return 1;
