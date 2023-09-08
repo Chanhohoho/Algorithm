@@ -9,7 +9,7 @@ vector<int> solution(string s) {
     answer.push_back(0);
     
     while(s!="1"){
-        int cnt1 = 0;   // 1의 개수
+        int cnt1 = 0;   // 1의 갯수
         
         for(int i=0; i<s.size(); i++){  // s의 모든 0을 제거
             if(s[i]=='1') cnt1++;
