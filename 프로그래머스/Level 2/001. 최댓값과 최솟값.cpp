@@ -13,7 +13,7 @@ string solution(string s) {
     while(i<s.size()){
         
         if(s[i]==' '){
-            int now = stoi(temp);
+            int now = stoi(temp);   // string -> int 함수 stoi(), int -> string 은 to_string()
             if(maxN<now) maxN=now;
             if(minN>now) minN=now;
             temp = "";
