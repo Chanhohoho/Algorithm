@@ -3,8 +3,7 @@
 #include <stack>
 using namespace std;
 
-bool solution(string s)
-{
+bool solution(string s){
     bool answer = true;
 
     int i=0;
